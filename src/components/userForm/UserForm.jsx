@@ -1,7 +1,7 @@
 import './userForm.css';
 import checked from '../../assets/checked.svg';
 
-const UserForm = () => {
+const UserForm = ({head1, head2, head3}) => {
   return (
     <div className='userform-cont'>
       <div className="profile-checked topcheck">
@@ -9,13 +9,25 @@ const UserForm = () => {
       </div>
       <div className="sub-uf-cnt">
          <div className="columnsss">
-            <p className='prf-txt'>First Name</p>
+            <p className='prf-txt'>{head1}:</p>
+            <div className="input-flex">
+               <input type="text"  placeholder={head1}/>
+               <span class="material-symbols-outlined">edit</span>
+            </div>
          </div>
          <div className="columnsss">
-            <p className='prf-txt'>Last Name</p>
+            <p className='prf-txt'>{head2}:</p>
+            <div className="input-flex">
+               <input type="text" placeholder={head2} />
+               <span class="material-symbols-outlined">edit</span>
+            </div>
          </div>
          <div className="columnsss">
-            <p className='prf-txt'>Email</p>
+            <p className='prf-txt'>{head3}:</p>
+            <div className="input-flex">
+               <input type="text" placeholder={head3} />
+               <span class="material-symbols-outlined">edit</span>
+            </div>
          </div>
       </div>
     </div>
@@ -23,5 +35,3 @@ const UserForm = () => {
 }
 
 export default UserForm
-
-

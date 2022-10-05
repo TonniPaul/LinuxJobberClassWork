@@ -6,47 +6,136 @@ import { Link } from 'react-router-dom';
 // import rangeData from '../../static/rangeData';
 
 const Interests = () => {
-  const [ rangeValue, setRangeValue ] = useState(0)
-  const [ rangeValue1, setRangeValue1 ] = useState(0)
-  const [ rangeValue2, setRangeValue2 ] = useState(0)
-  const [ rangeValue3, setRangeValue3 ] = useState(0)
-  const [ rangeValue4, setRangeValue4 ] = useState(0)
-  const [ rangeValue5, setRangeValue5 ] = useState(0)
-  const [ rangeValue6, setRangeValue6 ] = useState(0)
-  const [ rangeValue7, setRangeValue7 ] = useState(0)
+  const [ rangeValue, setRangeValue ] = useState(1)
+  const [ rangeValue1, setRangeValue1 ] = useState(1)
+  const [ rangeValue2, setRangeValue2 ] = useState(1)
+  const [ rangeValue3, setRangeValue3 ] = useState(1)
+  const [ rangeValue4, setRangeValue4 ] = useState(1)
+  const [ rangeValue5, setRangeValue5 ] = useState(1)
+  const [ rangeValue6, setRangeValue6 ] = useState(1)
+  const [ rangeValue7, setRangeValue7 ] = useState(1)
   const [ equal, setEqual ] = useState(true)
 
   const onSliderChange = (e , newValue) => {
      setRangeValue(parseInt(e.target.value))
      newValue = parseInt(e.target.value)
-       if (newValue === rangeValue1|| rangeValue2 || rangeValue3 || rangeValue4 || rangeValue5|| rangeValue6 || rangeValue7){
+       if (newValue === rangeValue1 || 
+          newValue ===  rangeValue2 ||
+          newValue ===  rangeValue3 ||
+          newValue ===  rangeValue4 ||
+          newValue ===  rangeValue5 ||
+          newValue ===  rangeValue6 ||
+          newValue ===  rangeValue7){
         setEqual(false)
-        console.log(equal)
        } else {
         setEqual(true)
        }
    }
    const onSliderChange1 = (e, newValue) => {
      setRangeValue1(parseInt(e.target.value))
+     newValue = parseInt(e.target.value)
+     if (newValue === rangeValue || 
+        newValue ===  rangeValue2 ||
+        newValue ===  rangeValue3 ||
+        newValue ===  rangeValue4 ||
+        newValue ===  rangeValue5 ||
+        newValue ===  rangeValue6 ||
+        newValue ===  rangeValue7){
+      setEqual(false)
+     } else {
+      setEqual(true)
+     }
    }
    const onSliderChange2 = (e, newValue) => {
      setRangeValue2(parseInt(e.target.value))
+     newValue = parseInt(e.target.value)
+     if (newValue === rangeValue || 
+        newValue ===  rangeValue1 ||
+        newValue ===  rangeValue3 ||
+        newValue ===  rangeValue4 ||
+        newValue ===  rangeValue5 ||
+        newValue ===  rangeValue6 ||
+        newValue ===  rangeValue7){
+      setEqual(false)
+     } else {
+      setEqual(true)
+     }
    }
    const onSliderChange3 = (e, newValue) => {
      setRangeValue3(parseInt(e.target.value))
+     newValue = parseInt(e.target.value)
+     if (newValue === rangeValue || 
+        newValue ===  rangeValue1 ||
+        newValue ===  rangeValue2 ||
+        newValue ===  rangeValue4 ||
+        newValue ===  rangeValue5 ||
+        newValue ===  rangeValue6 ||
+        newValue ===  rangeValue7){
+      setEqual(false)
+     } else {
+      setEqual(true)
+     }
    }
    const onSliderChange4 = (e, newValue) => {
      setRangeValue4(parseInt(e.target.value))
+     newValue = parseInt(e.target.value)
+     if (newValue === rangeValue || 
+        newValue ===  rangeValue1 ||
+        newValue ===  rangeValue2 ||
+        newValue ===  rangeValue3 ||
+        newValue ===  rangeValue5 ||
+        newValue ===  rangeValue6 ||
+        newValue ===  rangeValue7){
+      setEqual(false)
+     } else {
+      setEqual(true)
+     }
    }
    const onSliderChange5 = (e, newValue) => {
      setRangeValue5(parseInt(e.target.value))
+     newValue = parseInt(e.target.value)
+     if (newValue === rangeValue || 
+        newValue ===  rangeValue1 ||
+        newValue ===  rangeValue2 ||
+        newValue ===  rangeValue3 ||
+        newValue ===  rangeValue4 ||
+        newValue ===  rangeValue6 ||
+        newValue ===  rangeValue7){
+      setEqual(false)
+     } else {
+      setEqual(true)
+     }
    }
 
    const onSliderChange6 = (e, newValue) => {
      setRangeValue6(parseInt(e.target.value))
+     newValue = parseInt(e.target.value)
+     if (newValue === rangeValue || 
+        newValue ===  rangeValue1 ||
+        newValue ===  rangeValue2 ||
+        newValue ===  rangeValue3 ||
+        newValue ===  rangeValue4 ||
+        newValue ===  rangeValue5 ||
+        newValue ===  rangeValue7){
+      setEqual(false)
+     } else {
+      setEqual(true)
+     }
    }
    const onSliderChange7 = (e, newValue) => {
      setRangeValue7(parseInt(e.target.value))
+     newValue = parseInt(e.target.value)
+     if (newValue === rangeValue || 
+        newValue ===  rangeValue1 ||
+        newValue ===  rangeValue2 ||
+        newValue ===  rangeValue3 ||
+        newValue ===  rangeValue4 ||
+        newValue ===  rangeValue5 ||
+        newValue ===  rangeValue6){
+      setEqual(false)
+     } else {
+      setEqual(true)
+     }
    }
   
 
@@ -83,7 +172,7 @@ const Interests = () => {
             onChangeValue = {onSliderChange2}
           />
           <Sliderr
-            title = {'Product Manager'}
+            title = {'Product Designer'}
             min = {1}
             max = {10}
             step = {1}
@@ -129,18 +218,18 @@ const Interests = () => {
         style={{
           fontSize: 18,
           fontStyle: 'italic',
-          color: !equal ? 'var(--red)' :'var(--sliderText)',
+          color: equal ? 'var(--red)' :'var(--sliderText)',
           marginTop: 10
         }}
       >* You cannot pick a number twice.</p>
-      <Link to='/my-profile'>
+      {!equal && <Link to='/my-profile'>
         <button className="next">
           <p>Done</p>
           <span className="material-symbols-outlined arrow">arrow_forward_ios</span>
         </button>
-      </Link>
+      </Link>}
     </div>
-  )
+  )             
 }
 
 export default Interests;

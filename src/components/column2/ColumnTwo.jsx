@@ -79,7 +79,8 @@ const ColumnTwo = () => {
           <div className="fllxx">
             <p className="text-dscptn">Are you a student? </p>
             <div className={`fllxx ${answer === 'No' && 'gry'} `}>
-              {isStudent && <span class="material-symbols-outlined">done</span>}
+              {(answer === 'Yes') && <span class="material-symbols-outlined">done</span>}
+              {(answer === 'No') && <span class="material-symbols-outlined">close</span>}
               <p>{answer}</p>
             </div>
           </div>
@@ -111,7 +112,8 @@ const ColumnTwo = () => {
         <div className="fllxx">
             <p className="text-dscptn"> Did you graduate?</p>
             <div className={`fllxx ${graduate === 'No'  && 'gry'} `}>
-              {(graduate !== '') && <span className="material-symbols-outlined">done</span>}
+              {(graduate === 'Yes') && <span className="material-symbols-outlined">done</span>}
+              {(graduate === 'No') && <span class="material-symbols-outlined">close</span>}
               <p>{graduate}</p>
             </div>
           </div>
@@ -139,7 +141,8 @@ const ColumnTwo = () => {
             <p className="text-dscptn"> Does your country require post-graduation service?</p>
             <div 
               class={`fllxx ${postGrad === "No"  && 'gry'} `}>
-              {isPostGrad && <span className="material-symbols-outlined">done</span>}
+              {(postGrad === 'Yes') && <span className="material-symbols-outlined">done</span>}
+              {(postGrad === 'No') && <span class="material-symbols-outlined">close</span>}
               <p>{postGrad}</p>
             </div>
           </div>
@@ -158,8 +161,9 @@ const ColumnTwo = () => {
               <div className="flexme">
                 <p className="text-dscptn hyc">Have you oompleted?</p>
                 <div 
-                  className={`flexme ${isStudent && 'gry'} `}>
-                  {isComplete &&<span className="material-symbols-outlined">done</span>}
+                  className={`flexme ${completed === 'No' && 'gry'} `}>
+                  {completed === 'Yes' &&<span className="material-symbols-outlined">done</span>}
+                  {(completed === 'No') && <span class="material-symbols-outlined">close</span>}
                   {<p>{completed}</p>}
                 </div>
               </div>
